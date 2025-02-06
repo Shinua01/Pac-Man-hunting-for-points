@@ -219,7 +219,7 @@ class Ghost:#Призраки
             screen.blit(self.image, self.rect.topleft)
 
 
-class GameState:#Новые уровни
+class GameState:#Новые уровни и вывод окон
     def __init__(self):
         self.current_level = 0
         self.walls = []
@@ -340,7 +340,7 @@ class StartMenu:#Стартовое меню
             "Нажмите ESC для возврата в меню"
         ]
 
-        y_offset = HEIGHT // 2 - 150
+        y_offset = HEIGHT // 2 - 165
         for line in lines:
             text = font.render(line, True, WHITE)
             text_rect = text.get_rect(center=(WIDTH // 2, y_offset))
@@ -351,8 +351,8 @@ class StartMenu:#Стартовое меню
         screen.blit(self.background, (0, 0))
 
         # Заголовок
-        title_text = self.title_font.render("PAC-MAN", True, YELLOW)
-        title_rect = title_text.get_rect(center=(WIDTH//2, HEIGHT//2 - 150))
+        title_text = self.title_font.render("PAC-MAN: hunting for points", True, YELLOW)
+        title_rect = title_text.get_rect(center=(WIDTH//2, HEIGHT//2 - 185))
         screen.blit(title_text, title_rect)
 
         # Кнопка Start
@@ -502,3 +502,4 @@ while running:
         clock.tick(FPS)
 
 pygame.quit()
+
